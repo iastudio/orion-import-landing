@@ -1,0 +1,226 @@
+@mixin radius($radius){
+	@include border-top-radius($radius);
+	@include border-bottom-radius($radius);
+	@include border-left-radius($radius);
+	@include border-right-radius($radius);
+}
+
+@import
+   "../bourbon/bourbon",
+   "settings",
+   "reset",
+   "text",
+   "960",
+   "grid",
+   "ui",
+   "top-bar",
+   "header",
+   "slider",
+   "icons",
+   "else",
+   "forms",
+   "flipclock",
+   "lightbox";
+
+*, *:before, *:after {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "PT Sans", "Helvetica", Helvetica, Arial, sans-serif;
+	background: $bg-color;
+	line-height: 150%;
+	font-size: $text-size;
+}
+
+@media screen and (max-device-width: 480px){
+  body{
+    -webkit-text-size-adjust: none;
+  }
+}
+
+#wrapper {
+	overflow: hidden;
+}
+
+h1, h2, h3, h4 {
+	color: $blue-color;
+}
+
+p {
+	line-height: 120%;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.right {
+	float: right !important;
+}
+
+.left {
+	float: left !important;
+}
+
+a, input, textarea, .btn {
+	outline: none;
+}
+
+a, a:link, a:visited {
+	color: #000;
+	&:hover {
+		color: lighten(#000, 20%);
+	}
+}
+
+section {
+	header {
+		height: 66px;
+		margin-bottom: 10px;
+
+		h1 {
+			margin-top: 17px;
+			font-size: 30px;
+			//text-transform: uppercase;
+		}
+	}
+
+	margin: 135px 0;
+
+	&#slider {
+		margin: 60px 0;
+	}
+}
+
+.lbox {
+	display: block;
+	border: 9px solid #fff;
+	@include box-shadow(1px 1px 0 0 #96c4ea);
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+}
+
+.btn, a.btn, input[type=submit] {
+	display: block;
+	text-align: center;
+	background-color: rgb(246,160,25);
+	@include linear-gradient(rgb(241,133,25), rgb(246,160,25));
+	@include radius(5px);
+	color: #683c05 !important;
+	text-shadow: 0 1.5px 0px rgb( 248, 190, 102 );
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px;
+	text-decoration: none;
+	margin: 8px 0;
+	position: relative;
+	clear: both;
+	cursor: pointer;
+
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+
+	/* No support for these yet, use at own risk */
+	-o-user-select: none;
+	user-select: none;
+
+	-webkit-box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
+	        box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
+
+	&:hover {
+		color: rgb(241,133,25);
+		@include linear-gradient(rgb(246,160,25), rgb(241,133,25));
+		-webkit-box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
+	        box-shadow:0 4px 0 0 #854C05, 0 4px 3px 0px rgb( 66, 34, 1 );
+		&:active {
+			//@include box-shadow(inset 0 1px 3px 0 rgba(0,0,0,0.5));
+			top: 4px;
+			-webkit-box-shadow:0 2px 0 0 #854C05;
+	        		box-shadow:0 2px 0 0 #854C05;
+		}
+	}
+}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+// .reveal-modal {
+// 	//top: 50%;
+// 	left: 50%;
+// 	width: $fixed-width / 2 !important;
+// 	height: 240px !important;
+// 	//margin-top: -$fixed-width / 2 / 2 !important;
+// 	margin-left: -$fixed-width / 2 / 2 !important;
+// 	overflow: hidden;
+// 	max-width: none !important;
+// 	min-height: 0 !important;
+// 	h2 {
+// 		font-size: 32px !important;
+// 	}
+// 	z-index: 100;
+// }
+
+
+// .top-bar-section ul {
+// 	width: auto !important;
+// 	height: auto !important;
+// 	display: inline !important;
+// }

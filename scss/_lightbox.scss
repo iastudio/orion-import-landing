@@ -1,0 +1,226 @@
+// COLORS & BACKGROUNDS --------------------------------------------------------
+
+$lightGray: #eeeeee;
+$blue: #0096df;
+$green: #00bfa8;
+$yellow: #fdf485;
+$orange: #ff8000;
+$red: #ff4040;
+
+$color: #cccccc;
+$bgColor: #444444;
+
+$headingColor: $yellow;
+$linkColor: $green;
+
+$borderColor: #d5d5d5;
+$darkBorderColor: darken($borderColor, 10%);
+$darkerBorderColor: darken($borderColor, 20%);
+$lightBorderColor: lighten($borderColor, 5%);
+$lighterBorderColor: lighten($borderColor, 10%);
+
+// TYPE --------------------------------------------------------
+
+$fontFamily: "Karla", "lucida grande", sans-serif;
+$fontSize: 18px;
+
+// LAYOUT --------------------------------------------------------
+
+$gutter: 40px;
+$maxColumnWidth: 740px;
+
+// UI COMPONENTS --------------------------------------------------------
+$radius: 4px;
+
+@import "compass/css3";
+@import "compass/utilities/general/clearfix";
+
+// Preload images
+body:after {
+  content: url(../i/prev.png) url(../i/next.png);
+  display: none;
+}
+
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  @include opacity(0.8);
+  display: none;
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+  .lb-image {
+    display: block;
+    height: auto;
+    max-width: inherit;
+    @include border-radius($radius - 1);
+  }
+  a img {
+    border: none;
+  }
+}
+
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  @include pie-clearfix;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  @include border-radius($radius);
+}
+
+.lb-container {
+  padding: 4px;
+}
+
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  //background: url(../i/loading.gif) no-repeat;
+  font-size: 32px;
+  color: #000;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  @include text-shadow(rgba(255,255,255, 0.5) 0 0 30px);
+  &:before {
+    content: "\f021";
+  }
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.lb-container > .nav {
+  left: 0;
+}
+
+.lb-nav a {
+  outline: none;
+}
+
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+.lb-prev {
+  left: 0;
+  float: left;
+  @include opacity(0);
+  @include transition(opacity 0.6s);
+  &:hover {
+    @include opacity(1);
+    background: url(../i/prev.png) left 48% no-repeat;
+  }
+}
+
+.lb-next {
+  right: 0;
+  float: right;
+  @include opacity(0);
+  @include transition(opacity 0.6s);
+  &:hover {
+    @include opacity(1);
+    background: url(../i/next.png) right 48% no-repeat;
+  }
+}
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  @include pie-clearfix;
+  width: 100%;
+  @include border-bottom-radius($radius);
+}
+
+.lb-data {
+  padding: 0 4px;
+  color: #bbbbbb;
+  position: relative;
+  .lb-details {
+    width: 85%;
+    float: left;
+    text-align: left;
+    line-height: 1.1em;
+  }
+  .lb-caption {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1em;
+  }
+  .lb-number {
+    display: block;
+    clear: left;
+    padding-bottom: 1em;
+    font-size: 12px;
+    color: #999999;
+  }
+  .lb-close {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 30px;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    color: #fff;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    visibility: hidden;
+    cursor: pointer;
+    &:before {
+      content: "\f00d";
+      visibility: visible;
+    }
+    @include opacity(0.7);
+    @include transition(opacity 0.2s);
+    &:hover {
+      cursor: pointer;
+      @include opacity(1);
+    }
+  }
+}

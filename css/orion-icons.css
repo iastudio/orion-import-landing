@@ -1,0 +1,75 @@
+@font-face {
+	font-family: 'orion';
+	src:url('../fonts/orion.eot?6noypk');
+	src:url('../fonts/orion.eot?#iefix6noypk') format('embedded-opentype'),
+		url('../fonts/orion.svg?6noypk#orion') format('svg'),
+		url('../fonts/orion.woff?6noypk') format('woff'),
+		url('../fonts/orion.ttf?6noypk') format('truetype');
+		
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'orion';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/*-webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);*/
+}
+
+.icon-arrow-l:before {
+	content: "\e60e";
+}
+.icon-arrow-r:before {
+	content: "\e60f";
+}
+.icon-bike:before {
+	content: "\e600";
+}
+.icon-car:before {
+	content: "\e601";
+}
+.icon-transmission:before {
+	content: "\e602";
+}
+.icon-iastudio:before {
+	content: "\e603";
+}
+.icon-envelope:before {
+	content: "\e604";
+}
+.icon-wallet:before {
+	content: "\e605";
+}
+.icon-tasks:before {
+	content: "\e606";
+}
+.icon-ship:before {
+	content: "\e607";
+}
+.icon-cort:before {
+	content: "\e608";
+}
+.icon-safe:before {
+	content: "\e609";
+}
+.icon-sign:before {
+	content: "\e60a";
+}
+.icon-support:before {
+	content: "\e60b";
+}
+.icon-crystal:before {
+	content: "\e60c";
+}
+.icon-tablet:before {
+	content: "\e60d";
+}

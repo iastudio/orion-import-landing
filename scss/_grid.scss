@@ -1,0 +1,13 @@
+.container {
+	@include grid-container;
+	@include clearfix;
+}
+
+@for $i from 1 through 12 {
+	.push-#{$i} {
+		@include push($i)
+	}
+	.col-#{$i} {
+		@include grid($i);
+	}
+}

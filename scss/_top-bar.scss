@@ -1,0 +1,45 @@
+.top-bar {
+	width: 100%;
+	height: 50px;
+	margin: 0;
+	@include linear-gradient(#8E2B0E 0%, #9E3A1C 50%, #973215 100%);
+	border-bottom: 4px solid #581d0d;
+	-webkit-box-shadow:inset 0 -1px 0 0 #a03b1d, 1px 1.732px 2px 0px rgba(6, 6, 6, 0.5);
+	        box-shadow:inset 0 -1px 0 0 #a03b1d, 1px 1.732px 2px 0px rgba(6, 6, 6, 0.5);
+ 
+
+	&.fixed {
+		position: fixed;
+		top: 0;
+		z-index: 2;
+	}
+
+	nav {
+		ul {
+			display: inline-block;
+			width: 100%;
+			margin: 0;
+			margin-top: 12px;
+			li {
+				list-style: none;
+				float: left;
+				color: #fff;
+				margin: 0;
+				margin-right: 5px;
+				&:last-child {
+					margin-right: 0;
+				}
+				a {
+					text-decoration: none;
+					color: #fff;
+					padding: 7px 15px;
+					@include radius(5px);
+					&:hover {
+						background: #8E361A;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+}

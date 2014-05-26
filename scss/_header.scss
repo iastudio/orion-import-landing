@@ -1,0 +1,44 @@
+#header {
+	margin-top: 50px;
+	padding: 20px 0;
+	color: #fff;
+	height: 250px;
+	background: url('../i/head-bg.png') 50% -50px no-repeat #004F7D;
+
+	a, h1, h2, h3, h4, h5, p {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.logo {
+		margin-top: 20px;
+		display: block;
+		cursor: default;
+		p {
+			margin-left: 90px;
+			margin-top: -15px;
+			line-height: 1.2;
+		}
+	}
+	.phone {
+		padding-top: 40px;
+		h1 {
+			margin: 0;
+		}
+		.fa-stack {
+			position: absolute;
+			margin-left: -45px;
+			margin-top: -2px;
+			font-size: .7em;
+			.fa-phone {
+				font-size: 1.3em;
+			}
+			.fa-circle-o {
+				font-weight: 600;
+				&:before {
+					content: "\25ef";
+				}
+			}
+		}
+	}
+}
